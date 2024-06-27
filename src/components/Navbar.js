@@ -45,10 +45,9 @@ export default function Navbar() {
           {sectionIds.map((sectionId, index) => (
             <li key={index} className="py-2 md:py-0 text-center xl:text-xl md:text-left xxl:text-3xl">
               <Link
-                to="/"
+                to={`#${sectionId}`} 
                 onClick={() => {
                   scrollToSection(sectionId);
-                  setIsOpen(false);
                 }}
                 className="block px-6 md:px-3 xl:px-4 py-2 font-medium hover:text-gray-600 hover:underline cursor-pointer transition duration-200"
               >
@@ -57,7 +56,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        {isOpen && <div className="fixed inset-0 bg-opacity-100 z-10" onClick={toggleMenu}></div>}
       </div>
     </nav>
   );
